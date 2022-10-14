@@ -39,9 +39,9 @@
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <svg width="290" height="86" viewBox="0 0 290 86" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <path id="Teardrop-Marker" fill="#23a2ff" fill-rule="evenodd" stroke="#284b63" stroke-width="2.413941" stroke-linecap="round" stroke-linejoin="round" d="M 95.861115 43 C 95.861115 66.748245 76.565788 86 52.763889 86 C 28.961985 86 9.666667 66.748245 9.666667 43 C 9.666667 19.251747 28.961985 0 52.763889 0 L 95.861115 0 L 95.861115 43 Z"/>
-                        <text id="---" xml:space="preserve" x="21.262437" y="78" font-family="Hiragino Sans" font-size="28.96729" font-weight="700" fill="#ff9400">        JBIDDULPH</text>
-                        <text id="CRM" xml:space="preserve" x="31.348836" y="61" font-family="Hiragino Sans" font-size="19.311526" font-weight="700" fill="#ffffff">CRM</text>
+                        <path id="Speech-Bubble" fill="#00a1fe" fill-rule="evenodd" stroke="#284b63" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M 83.128113 66.743805 L 55.836784 66.743805 L 41.220467 80.001457 C 40.245468 80.976402 38.779205 81.268044 37.505337 80.74041 C 36.231464 80.212769 35.400871 78.969734 35.400833 77.590919 L 35.400833 77.590919 L 35.400833 66.743805 L 31.061989 66.743805 C 23.359661 66.743805 17.115707 60.499855 17.115707 52.797527 L 17.115707 19.946281 C 17.115707 12.243958 23.359661 6 31.061989 6 L 83.128113 6 C 90.830421 6 97.074394 12.243958 97.074394 19.946281 L 97.074394 52.797527 C 97.074394 60.499855 90.830421 66.743805 83.128113 66.743805 Z"/>
+                        <text id="---" xml:space="preserve" x="21.262437" y="78" font-family="Hiragino Sans" font-size="28.96729" font-weight="700" fill="#41b0f6">        JBIDDULPH</text>
+                        <text id="CRM" xml:space="preserve" x="31.348836" y="46" font-family="Hiragino Sans" font-size="19.311526" font-weight="700" fill="#ffffff">CRM</text>
                     </svg>
                 </div>
 
