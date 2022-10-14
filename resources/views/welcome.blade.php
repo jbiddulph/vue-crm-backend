@@ -38,10 +38,10 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg width="360" height="107" viewBox="0 0 360 107" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <path id="Teardrop-Marker" fill="#23a2ff" fill-rule="evenodd" stroke="#284b63" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M 119 53.5 C 119 83.047241 95.047188 107 65.5 107 C 35.952808 107 12 83.047241 12 53.5 C 12 23.952759 35.952808 0 65.5 0 L 119 0 L 119 53.5 Z"/>
-                        <text id="---" xml:space="preserve" x="189.5" y="93" text-anchor="middle" font-family="Hiragino Sans" font-size="36" font-weight="700" fill="#ff9400">        JBIDDULPH</text>
-                        <text id="CRM" xml:space="preserve" x="72" y="71" text-anchor="middle" font-family="Hiragino Sans" font-size="24" font-weight="700" fill="#ffffff">CRM</text>
+                    <svg width="290" height="86" viewBox="0 0 290 86" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path id="Teardrop-Marker" fill="#23a2ff" fill-rule="evenodd" stroke="#284b63" stroke-width="2.413941" stroke-linecap="round" stroke-linejoin="round" d="M 95.861115 43 C 95.861115 66.748245 76.565788 86 52.763889 86 C 28.961985 86 9.666667 66.748245 9.666667 43 C 9.666667 19.251747 28.961985 0 52.763889 0 L 95.861115 0 L 95.861115 43 Z"/>
+                        <text id="---" xml:space="preserve" x="21.262437" y="78" font-family="Hiragino Sans" font-size="28.96729" font-weight="700" fill="#ff9400">        JBIDDULPH</text>
+                        <text id="CRM" xml:space="preserve" x="31.348836" y="61" font-family="Hiragino Sans" font-size="19.311526" font-weight="700" fill="#ffffff">CRM</text>
                     </svg>
                 </div>
 
