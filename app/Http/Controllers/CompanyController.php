@@ -9,10 +9,10 @@ use App\Http\Resources\CompanyResource;
 
 class CompanyController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth:api');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
 
     public function index()
     {

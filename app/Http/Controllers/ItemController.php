@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use Illuminate\Http\Request;
+use App\Http\Resources\ItemResource;
 
 class ItemController extends Controller
 {
@@ -14,11 +15,15 @@ class ItemController extends Controller
 
     public function index()
     {
-        $items = Item::all();
-        return response()->json([
-            'status' => 'success',
-            'items' => $items,
-        ]);
+
+        $items = Item::paginate(15);
+        return ItemResource::collection($items);
+
+        // $items = Item::all();
+        // return response()->json([
+        //     'status' => 'success',
+        //     'items' => $items,
+        // ]);
     }
 
     public function store(Request $request)
