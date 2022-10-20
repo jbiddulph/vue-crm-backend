@@ -17,11 +17,7 @@ class ContactController extends Controller
     {
         $contacts = Contact::paginate(15);
 
-        return ContactResource::collection($contacts);
-        // return response()->json([
-        //     'status' => 'success',
-        //     'contacts' => $contacts,
-        // ]);
+        return ContactResource::collection($contacts->load('company'));
     }
 
     public function store(Request $request)
@@ -64,7 +60,7 @@ class ContactController extends Controller
         $contact = Contact::find($id);
         return response()->json([
             'status' => 'success',
-            'contact' => $contact,
+            'contact' => new ContactResource($contact->load('company')),
         ]);
     }
 

@@ -17,7 +17,6 @@ class CompanyController extends Controller
     public function index()
     {
         $companies = Company::paginate(15);
-
         return CompanyResource::collection($companies);
         // return response()->json([
         //     'status' => 'success',
@@ -79,7 +78,7 @@ class CompanyController extends Controller
         $company = Company::find($id);
         return response()->json([
             'status' => 'success',
-            'company' => $company,
+            'company' => new CompanyResource($company->load('contacts')),
         ]);
     }
 

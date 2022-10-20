@@ -25,7 +25,7 @@ class CompanyResource extends JsonResource
             "region_county" => $this->region_county,
             "country_code" => $this->country_code,
             "post_code" => $this->post_code,
-            "contacts" =>  ContactResource::collection($this->contacts)
+            "contacts" => ContactResource::collection($this->contacts)
         ];
     }
 }

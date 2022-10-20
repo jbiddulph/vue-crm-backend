@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Http\Resources\NoteResource;
 use App\Http\Resources\CompanyResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -27,7 +28,8 @@ class ContactResource extends JsonResource
             "country_code" => $this->country_code,
             "post_code" => $this->post_code,
             "created_at" => $this->created_at,
-            "company" => new CompanyResource($this->company)
+            "company" => new CompanyResource($this->whenLoaded('company')),
+            "notes" => NoteResource::collection($this->notes)
         ];
     }
 }

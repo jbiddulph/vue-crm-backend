@@ -3,11 +3,12 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\TodoController;
 use App\Http\Controllers\ItemController;
-use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NoteController;
+use App\Http\Controllers\TodoController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\ContactController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
@@ -45,6 +46,15 @@ Route::controller(ContactController::class)->group(function () {
     Route::get('contact/{id}', 'show');
     Route::put('contact/{id}', 'update');
     Route::delete('contact/{id}', 'destroy');
+});
+
+// Notes
+Route::controller(NoteController::class)->group(function () {
+    Route::get('notes', 'index');
+    Route::post('note', 'store');
+    Route::get('note/{id}', 'show');
+    Route::put('note/{id}', 'update');
+    Route::delete('note/{id}', 'destroy');
 });
 
 // Companies

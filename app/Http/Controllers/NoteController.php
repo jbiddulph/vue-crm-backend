@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
+use App\Http\Resources\NoteResource;
 
 class NoteController extends Controller
 {
@@ -14,17 +15,9 @@ class NoteController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $notes = Note::paginate(15);
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return NoteResource::collection($notes);
     }
 
     /**
@@ -35,7 +28,21 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'contact_id' => 'required',
+            'first_name' => 'required|string|max:255'
+        ]);
+
+        $note = Note::create([
+            'contact_id' => $request->contact_id,
+            'note' => $request->note,
+        ]);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Note created successfully',
+            'note' => $note,
+        ]);
     }
 
     /**
@@ -44,20 +51,13 @@ class NoteController extends Controller
      * @param  \App\Models\Note  $note
      * @return \Illuminate\Http\Response
      */
-    public function show(Note $note)
+    public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Note  $note
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Note $note)
-    {
-        //
+        $note = Note::find($id);
+        return response()->json([
+            'status' => 'success',
+            'note' => $note,
+        ]);
     }
 
     /**
@@ -67,9 +67,23 @@ class NoteController extends Controller
      * @param  \App\Models\Note  $note
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Note $note)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'contact_id' => 'required',
+            'note' => 'required|string|max:255'
+        ]);
+
+        $note = Note::find($id);
+        $note->contact_id = $request->contact_id;
+        $note->note = $request->note;
+        $note->save();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Note updated successfully',
+            'note' => $note,
+        ]);
     }
 
     /**
@@ -78,8 +92,15 @@ class NoteController extends Controller
      * @param  \App\Models\Note  $note
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Note $note)
+    public function destroy($id)
     {
-        //
+        $note = Note::find($id);
+        $note->delete();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Contact deleted successfully',
+            'note' => $note,
+        ]);
     }
 }

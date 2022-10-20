@@ -19,7 +19,6 @@ class Company extends Model
         'region_county',
         'country_code',
         'post_code',
-        'notes'
     ];
 
     public function contacts() {
