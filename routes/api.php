@@ -9,6 +9,7 @@ use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GalleryController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
@@ -55,6 +56,15 @@ Route::controller(NoteController::class)->group(function () {
     Route::get('note/{id}', 'show');
     Route::put('note/{id}', 'update');
     Route::delete('note/{id}', 'destroy');
+});
+
+// Galleries
+Route::controller(GalleryController::class)->group(function () {
+    Route::get('galleries', 'index');
+    Route::post('gallery', 'store');
+    Route::get('gallery/{id}', 'show');
+    Route::put('gallery/{id}', 'update');
+    Route::delete('gallery/{id}', 'destroy');
 });
 
 // Companies
