@@ -9,7 +9,7 @@ use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ArtworkController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
@@ -58,13 +58,13 @@ Route::controller(NoteController::class)->group(function () {
     Route::delete('note/{id}', 'destroy');
 });
 
-// Galleries
-Route::controller(GalleryController::class)->group(function () {
-    Route::get('galleries', 'index');
-    Route::post('gallery', 'store');
-    Route::get('gallery/{id}', 'show');
-    Route::put('gallery/{id}', 'update');
-    Route::delete('gallery/{id}', 'destroy');
+// Artworks
+Route::controller(ArtworkController::class)->group(function () {
+    Route::get('artwork', 'index');
+    Route::post('artwork', 'store');
+    Route::get('artwork/{id}', 'show');
+    Route::put('artwork/{id}', 'update');
+    Route::delete('artwork/{id}', 'destroy');
 });
 
 // Companies

@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use App\Http\Resources\NoteResource;
+use App\Http\Resources\ArtworkResource;
 use App\Http\Resources\CompanyResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -29,7 +30,8 @@ class ContactResource extends JsonResource
             "post_code" => $this->post_code,
             "created_at" => $this->created_at,
             "company" => new CompanyResource($this->whenLoaded('company')),
-            "notes" => NoteResource::collection($this->notes)
+            "notes" => NoteResource::collection($this->notes),
+            "artworks" => ArtworkResource::collection($this->artworks)
         ];
     }
 }
