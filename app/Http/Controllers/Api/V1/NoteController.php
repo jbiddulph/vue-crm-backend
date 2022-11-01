@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
 use App\Http\Resources\NoteResource;
+use App\Http\Controllers\Controller;
 
 class NoteController extends Controller
 {

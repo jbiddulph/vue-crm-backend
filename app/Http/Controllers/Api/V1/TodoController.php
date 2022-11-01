@@ -1,17 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use App\Http\Resources\TodoResource;
+use App\Http\Controllers\Controller;
 
 class TodoController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth:api');
-    // }
 
     public function index()
     {

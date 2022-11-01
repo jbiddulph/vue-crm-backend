@@ -1,17 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Models\Artwork;
 use Illuminate\Http\Request;
 use App\Http\Resources\ArtworkResource;
+use App\Http\Controllers\Controller;
 
 class ArtworkController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:api');
-    }
 
     /**
      * Display a listing of the resource.
