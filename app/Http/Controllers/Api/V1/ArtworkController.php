@@ -17,9 +17,18 @@ class ArtworkController extends Controller
      */
     public function index()
     {
-        $artworks = Artwork::with('contact')->paginate(15);
+        $artworks = Artwork::with('contact')->paginate(30);
 
         return ArtworkResource::collection($artworks);
+    }
+
+    public function contactArtwork($id)
+    {
+        $artwork = Artwork::where('contact_id', '=' , $id)->paginate(30);
+        return response()->json([
+            'status' => 'success',
+            'artworks' => $artwork,
+        ]);
     }
 
     /**

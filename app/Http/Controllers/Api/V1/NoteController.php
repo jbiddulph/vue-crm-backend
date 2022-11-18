@@ -31,7 +31,7 @@ class NoteController extends Controller
     {
         $request->validate([
             'contact_id' => 'required',
-            'first_name' => 'required|string|max:255'
+            'note' => 'required|string|max:255'
         ]);
 
         $note = Note::create([

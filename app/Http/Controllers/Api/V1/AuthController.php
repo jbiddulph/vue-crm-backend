@@ -2,14 +2,25 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Models\User;
+use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Models\User;
-use App\Http\Controllers\Controller;
 
 class AuthController extends Controller
 {
+
+    public function verifyEmail($email){
+        if (request()->wantsJson()){
+            $contact=Contact::where('email', $email)->get();
+            return response()->json([
+                'status' => 'success',
+                'contact' => $contact
+            ]);
+        }
+    }
 
     public function login(Request $request)
     {
@@ -50,7 +61,9 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-        ]);
+        ])->assignRole('user');
+
+        Contact::where('email', $user->email)->update(['user_id' => $user->id]);
 
         $token = Auth::login($user);
         return response()->json([

@@ -62,6 +62,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1'], f
         Route::post('register', 'register');
         Route::post('logout', 'logout');
         Route::post('refresh', 'refresh');
+        Route::post('verify/{email}', 'verifyEmail');
     });
     // Todos
     Route::controller(TodoController::class)->group(function () {
@@ -76,6 +77,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1'], f
     // Artworks
     Route::controller(ArtworkController::class)->group(function () {
         Route::get('artwork', 'index');
+        Route::get('artwork/contact/{contact_id}', 'contactArtwork');
         Route::get('artwork/{id}', 'show');
     });
 });
